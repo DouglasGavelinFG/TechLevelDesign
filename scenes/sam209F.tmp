@@ -253,8 +253,6 @@ transform = Transform3D(-0.865362, -0.501145, 0.00114459, 0.000253377, 0.0018464
 
 [node name="platform-tilting" parent="World" instance=ExtResource("22_4w2yn")]
 transform = Transform3D(0.999995, 0.00152919, -0.00291143, -0.00151916, 0.999993, 0.00345009, 0.00291667, -0.00344566, 0.99999, -3.82787, 1.64675, 4.07146)
-respawn = true
-respawn_delay = 2.0
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
