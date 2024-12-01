@@ -120,6 +120,7 @@ mesh = SubResource("ArrayMesh_6gl6g")
 surface_material_override/0 = SubResource("StandardMaterial3D_tahes")
 
 [node name="tilt-container" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.41817)
 
 [node name="platform-tilting" type="MeshInstance3D" parent="tilt-container" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 1.01391)
@@ -132,6 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="platform-tilting_collisionShape3D" type="CollisionShape3D" parent="tilt-container/platform-tilting2#StaticBody3D" index="0"]
 unique_name_in_owner = true
+transform = Transform3D(1.07679, 0, 0, 0, 1, 0, 0, 0, 1.13536, -0.0788552, 0.00307178, -0.125049)
 shape = SubResource("ConcavePolygonShape3D_4mmvt")
 
 [node name="FallingPlatformAnimationPlayer" type="AnimationPlayer" parent="." index="3"]

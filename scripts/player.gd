@@ -169,13 +169,17 @@ func collect_coin():
 	coins += 1
 
 	coin_collected.emit(coins)
-	
+
 func touched_goal() -> void:
 	reached_goal.emit()
 
 func player_died() -> void:
+	Audio.play("res://sounds/fall.ogg")
 	global_position = latest_checkpoint
 	
 func reached_checkpoint(checkpoint_pos : Vector3) -> void:
 	latest_checkpoint = checkpoint_pos
-	
+
+func bounce_player(bounce_strength : float) -> void:
+	gravity = -bounce_strength
+	jump_double = true;
