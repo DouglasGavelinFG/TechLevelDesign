@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=47 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="22_1dx8f"]
 [ext_resource type="PackedScene" uid="uid://c86a02uxe4xxo" path="res://objects/platform_tilting.tscn" id="22_4w2yn"]
 [ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_324j0"]
+[ext_resource type="PackedScene" uid="uid://c7ntm1s6rhcq6" path="res://objects/platform_large_tall.tscn" id="23_o5b7q"]
 [ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_6hsja"]
 [ext_resource type="PackedScene" uid="uid://dbr3dh46cbskt" path="res://objects/wall.tscn" id="25_ow4b3"]
 [ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="25_vfu23"]
@@ -50,6 +51,11 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ev8yt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi28x"]
+albedo_color = Color(0.713726, 0.403922, 0.0705882, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
 font = ExtResource("25_vfu23")
 font_size = 128
@@ -67,11 +73,6 @@ font = ExtResource("25_vfu23")
 font_size = 42
 shadow_color = Color(0, 0, 0, 0.376471)
 shadow_offset = Vector2(2, 2)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ev8yt"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi28x"]
-albedo_color = Color(0.713726, 0.403922, 0.0705882, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -253,8 +254,69 @@ transform = Transform3D(-0.865362, -0.501145, 0.00114459, 0.000253377, 0.0018464
 
 [node name="platform-tilting" parent="World" instance=ExtResource("22_4w2yn")]
 transform = Transform3D(0.999995, 0.00152919, -0.00291143, -0.00151916, 0.999993, 0.00345009, 0.00291667, -0.00344566, 0.99999, -3.82787, 1.64675, 4.07146)
-respawn = true
-respawn_delay = 2.0
+
+[node name="platform-large-tall" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7577, 3.58489, -3.28263)
+
+[node name="saw" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66978, 2.35731, 2.26156)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.1
+
+[node name="ladder2" parent="World" instance=ExtResource("33_nu5c8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56005, 2.35731, 2.08382)
+
+[node name="ladder-long2" parent="World" instance=ExtResource("34_dsfql")]
+transform = Transform3D(0.896285, 0, -0.443478, 0.0396, 0.996005, 0.080033, 0.441706, -0.0892941, 0.892705, -5.71286, 2.33835, -0.407938)
+
+[node name="key2" parent="World" instance=ExtResource("36_0q1s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15346, 2.35731, 1.20152)
+
+[node name="jewel2" parent="World" instance=ExtResource("37_6ri2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.438, 2.99582, 3.77826)
+
+[node name="platform-ramp3" parent="World" instance=ExtResource("37_v8krl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8995, 2.84649, -1.22351)
+
+[node name="platform10" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 13.6034)
+
+[node name="platform11" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 14.6078)
+
+[node name="platform12" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 15.5802)
+
+[node name="platform13" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 16.5566)
+
+[node name="platform14" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 17.5611)
+
+[node name="platform15" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 18.5335)
+
+[node name="platform16" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 19.5238)
+
+[node name="platform17" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 20.5283)
+
+[node name="platform-fortified3" parent="World" instance=ExtResource("39_7c11p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9776, 2.80633, 0.20297)
+
+[node name="platform-overhang3" parent="World" instance=ExtResource("36_3fthw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54715, 1.21871, 3.07731)
+
+[node name="poles3" parent="World" instance=ExtResource("36_rjg32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43248, 1.45134, 2.08531)
+
+[node name="Bottom plane" type="MeshInstance3D" parent="World"]
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 0, -12.5677, 0)
+mesh = SubResource("PlaneMesh_ev8yt")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_hi28x")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -371,66 +433,6 @@ text = "TIME"
 label_settings = SubResource("LabelSettings_v6r7m")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="saw" parent="." instance=ExtResource("27_mtmvm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66978, 2.35731, 2.26156)
-script = ExtResource("6_mnpsx")
-rotation_vector = 2
-rotation_speed = -0.1
-
-[node name="ladder2" parent="." instance=ExtResource("33_nu5c8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56005, 2.35731, 2.08382)
-
-[node name="ladder-long2" parent="." instance=ExtResource("34_dsfql")]
-transform = Transform3D(0.896285, 0, -0.443478, 0.0396, 0.996005, 0.080033, 0.441706, -0.0892941, 0.892705, -5.71286, 2.33835, -0.407938)
-
-[node name="key2" parent="." instance=ExtResource("36_0q1s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15346, 2.35731, 1.20152)
-
-[node name="jewel2" parent="." instance=ExtResource("37_6ri2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.438, 2.99582, 3.77826)
-
-[node name="platform-ramp3" parent="." instance=ExtResource("37_v8krl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8995, 2.84649, -1.22351)
-
-[node name="platform3" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 13.6034)
-
-[node name="platform4" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 14.6078)
-
-[node name="platform5" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 15.5802)
-
-[node name="platform6" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 16.5566)
-
-[node name="platform7" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 17.5611)
-
-[node name="platform8" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 18.5335)
-
-[node name="platform9" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 19.5238)
-
-[node name="platform10" parent="." instance=ExtResource("38_svh8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.73463, 20.5283)
-
-[node name="platform-fortified3" parent="." instance=ExtResource("39_7c11p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9776, 2.80633, 0.20297)
-
-[node name="platform-overhang3" parent="." instance=ExtResource("36_3fthw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54715, 1.21871, 3.07731)
-
-[node name="poles3" parent="." instance=ExtResource("36_rjg32")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43248, 1.45134, 2.08531)
-
-[node name="Bottom plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 0, -12.5677, 0)
-mesh = SubResource("PlaneMesh_ev8yt")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_hi28x")
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]

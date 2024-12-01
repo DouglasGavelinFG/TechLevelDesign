@@ -7,8 +7,9 @@ signal reached_goal
 @export var view: Node3D
 
 @export_subgroup("Properties")
-@export var movement_speed = 250
-@export var jump_strength = 7
+@export var movement_speed = 300
+@export var movement_run_speed = 500
+@export var jump_strength = 10
 
 var movement_velocity: Vector3
 var rotation_direction: float
@@ -16,6 +17,7 @@ var gravity = 0
 
 var previously_floored = false
 
+var running = false
 var jump_single = true
 var jump_double = true
 
@@ -112,13 +114,25 @@ func handle_controls(delta):
 	if input.length() > 1:
 		input = input.normalized()
 
-	movement_velocity = input * movement_speed * delta
+	# Running
+
+	if Input.is_action_just_pressed("run"):
+		running = true
+
+	if Input.is_action_just_released("run"):
+		running = false
+
+	if running:
+		movement_velocity = input * movement_run_speed * delta
+	else:
+		movement_velocity = input * movement_speed * delta
 
 	# Jumping
 
 	if Input.is_action_just_pressed("jump"):
 
-		if jump_single or jump_double:
+		##if jump_single or jump_double:
+		if jump_single:
 			jump()
 
 # Handle gravity

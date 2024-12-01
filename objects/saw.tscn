@@ -12,6 +12,7 @@ size = Vector3(0.75, 0.75, 0.35)
 [node name="saw" instance=ExtResource("1_7cccq")]
 
 [node name="DamageDealerArea3D" parent="." index="1" instance=ExtResource("2_w12bb")]
+only_push = true
 
 [node name="CollisionShape3D" parent="DamageDealerArea3D" index="0"]
 shape = SubResource("BoxShape3D_juh84")

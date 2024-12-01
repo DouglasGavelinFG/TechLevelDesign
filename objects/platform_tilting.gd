@@ -6,28 +6,53 @@ extends Node3D
 @onready var tilt_container: Node3D = $"tilt-container"
 @onready var falling_platform_animation_player: AnimationPlayer = $FallingPlatformAnimationPlayer
 
-var tilting := false
+var tilting = false
+var tilting_restore = false
+var entered_body = false
+var pressure_count : float = 0
+var max_pressure_count : float = 0.3
 var current_rotation = 0
-var rotate_force = 1
-var rotation_dest = 50
-var respawn_sequence_started : bool = false
-
+var tilt_force = 0
+var tilt_degree = 60
 
 func _process(delta):
-	current_rotation = rad_to_deg(tilt_container.rotation.x)
-	if tilting && current_rotation < rotation_dest:
-		tilt_container.rotation.x += rotate_force * delta
-		rotate_force += 0.2
-
-func restore_platform() -> void:
-	platform_tilting_collision_shape_3d.disabled = false
-	visible = true
-	respawn_sequence_started = false
-
-func _on_body_entered(_body):
-	if !tilting:
+	if entered_body:
+		pressure_count += 1 * delta
+	
+	if pressure_count > max_pressure_count && !tilting && !tilting_restore:
+		print("started")
 		Audio.play("res://sounds/fall.ogg") # Play sound
-		scale = Vector3(1.25, 1, 1.25) # Animate scale
-		print("hello")
+		tilt_force = 0
+		tilting = true
 		
-	tilting = true
+		await get_tree().create_timer(2).timeout
+		tilt_up_platform()
+	
+	current_rotation = rad_to_deg(tilt_container.rotation.x)
+	if tilting && current_rotation < tilt_degree:
+		tilt_container.rotation.x += tilt_force * delta
+		tilt_force += 0.5
+	
+	if tilting_restore && current_rotation > 0:
+		tilt_container.rotation.x -= tilt_force * delta
+
+func tilt_up_platform() -> void:
+	if !tilting_restore:
+		tilting = false
+		tilting_restore = true
+		tilt_force = 0.5
+	
+		await get_tree().create_timer(3).timeout
+		tilting_restore = false
+
+func _on_body_entered(body) -> void:
+	if !entered_body:
+		entered_body = true
+		if !tilting && !tilting_restore:
+			scale = Vector3(1.05, 1, 1.05) # Animate scale
+
+func _on_body_exited(body) -> void:
+	if entered_body:
+		entered_body = false
+		pressure_count = 0
+		scale = Vector3(1, 1, 1) # Animate scale
