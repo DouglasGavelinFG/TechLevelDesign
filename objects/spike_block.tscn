@@ -19,6 +19,7 @@ shape = SubResource("BoxShape3D_psce6")
 
 [node name="DamageDealerArea3D" parent="." index="2" instance=ExtResource("2_2lu74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+only_push = true
 
 [node name="CollisionShape3D" parent="DamageDealerArea3D" index="0"]
 shape = SubResource("BoxShape3D_v07v1")

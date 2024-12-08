@@ -13,6 +13,7 @@ size = Vector3(2, 0.75, 0.75)
 
 [node name="DamageDealerArea3D" parent="." index="1" instance=ExtResource("2_lgsom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+only_push = true
 
 [node name="CollisionShape3D" parent="DamageDealerArea3D" index="0"]
 shape = SubResource("BoxShape3D_51hsx")

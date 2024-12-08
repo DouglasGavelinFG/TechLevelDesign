@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://bgyrgaegp546c"]
+[gd_scene load_steps=10 format=4 uid="uid://bgyrgaegp546c"]
 
 [ext_resource type="PackedScene" uid="uid://bn0iedr5b0xbv" path="res://models/core_models/platform-large.glb" id="1_p6sh1"]
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_7myn4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsrdt"]
+albedo_texture = ExtResource("2_7myn4")
+uv1_offset = Vector3(0.2, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfvv5"]
 resource_name = "colormap"
@@ -42,18 +46,27 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xc6ml")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjawm"]
+albedo_texture = ExtResource("2_7myn4")
+uv1_offset = Vector3(0.2, 0, 0)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnu1x"]
 size = Vector3(5, 0.5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l20fj"]
 size = Vector3(5, 0.5, 5)
 
-[node name="platform-large" instance=ExtResource("1_p6sh1")]
+[node name="platform_large_cross" instance=ExtResource("1_p6sh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.38419e-07, 0)
+
+[node name="platform-large2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dsrdt")
 
 [node name="platform-large3" type="MeshInstance3D" parent="platform-large2" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.268091, -0.24032)
 mesh = SubResource("ArrayMesh_x0340")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_xjawm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
@@ -62,5 +75,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_gnu1x")
 
 [node name="collision2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0425224, 1.27866e-08)
 shape = SubResource("BoxShape3D_l20fj")

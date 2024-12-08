@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://c7ntm1s6rhcq6"]
+[gd_scene load_steps=8 format=4 uid="uid://c7ntm1s6rhcq6"]
 
 [ext_resource type="PackedScene" uid="uid://bn0iedr5b0xbv" path="res://models/core_models/platform-large.glb" id="1_da0gl"]
 [ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_ubbwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t1u2"]
+albedo_texture = ExtResource("2_ubbwn")
+uv1_offset = Vector3(0.2, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfvv5"]
 resource_name = "colormap"
@@ -48,8 +52,11 @@ size = Vector3(5, 0.5, 5)
 [node name="platform-large-tall" instance=ExtResource("1_da0gl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00417709, -0.0130343, -0.0057683)
 
+[node name="platform-large2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6t1u2")
+
 [node name="platform-large2" type="MeshInstance3D" parent="platform-large2" index="0"]
-transform = Transform3D(1, 0, 0, 0, -44.6488, 8.74228e-08, 0, -3.90332e-06, -1, 0, 0.108319, 0)
+transform = Transform3D(1, 0, 0, 0, -100, 1.50996e-07, 0, -1.50996e-05, -1, 0, 0.108319, 0)
 mesh = SubResource("ArrayMesh_5uesi")
 skeleton = NodePath("")
 

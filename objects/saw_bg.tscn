@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cykho438mydud"]
+
+[ext_resource type="PackedScene" uid="uid://day542mhkw6j7" path="res://models/props/saw.glb" id="1_vkhfi"]
+
+[node name="saw_bg" instance=ExtResource("1_vkhfi")]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="1"]
+collision_mask = 2

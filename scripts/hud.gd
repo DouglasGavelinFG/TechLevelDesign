@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var environment: WorldEnvironment = %Environment
 @onready var time_label: Label = %TimeLabel
 @onready var time_name_label: Label = %TimeNameLabel
+@onready var controls: Label = %Controls
 
 var original_blur : bool
 var original_blur_distance : float
@@ -39,6 +40,9 @@ func _process(delta: float) -> void:
 
 func start_speedrun():
 	speed_run = true
+
+func hide_controls():
+	controls.visible = false
 
 func _on_coin_collected(coins):
 	get_tree().call_group("Door", "coin_amount_updated",coins)

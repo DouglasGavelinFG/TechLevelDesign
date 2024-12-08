@@ -12,15 +12,18 @@ size = Vector3(0.75, 0.75, 0.35)
 [node name="saw" instance=ExtResource("1_7cccq")]
 
 [node name="DamageDealerArea3D" parent="." index="1" instance=ExtResource("2_w12bb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.523231, 0, 0, 0)
 only_push = true
 
 [node name="CollisionShape3D" parent="DamageDealerArea3D" index="0"]
+transform = Transform3D(0.752038, 0, 0, 0, 0.752038, 0, 0, 0, 0.996683, 0, 0, 0)
 shape = SubResource("BoxShape3D_juh84")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="2"]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
+transform = Transform3D(0.858071, 0, 0, 0, 0.858071, 0, 0, 0, 0.684531, 0, 0, 0)
 shape = SubResource("BoxShape3D_gjnwj")
 
 [editable path="DamageDealerArea3D"]

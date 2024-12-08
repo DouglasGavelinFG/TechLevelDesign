@@ -20,6 +20,8 @@ var previously_floored = false
 var running = false
 var jump_single = true
 var jump_double = true
+var on_platform = false
+var platform_rotation = 0
 
 var coins = 0
 var latest_checkpoint : Vector3
@@ -54,9 +56,12 @@ func _physics_process(delta):
 	move_and_slide()
 
 	# Rotation
-
-	if Vector2(velocity.z, velocity.x).length() > 0:
-		rotation_direction = Vector2(velocity.z, velocity.x).angle()
+	
+	if on_platform:
+		rotation_direction = rotation.y + (3.5 * delta)
+	else:
+		if Vector2(velocity.z, velocity.x).length() > 0:
+			rotation_direction = Vector2(velocity.z, velocity.x).angle()
 
 	rotation.y = lerp_angle(rotation.y, rotation_direction, delta * 10)
 
@@ -118,6 +123,8 @@ func handle_controls(delta):
 
 	if Input.is_action_just_pressed("run"):
 		running = true
+		var hud = get_node("../HUD")
+		hud.hide_controls()
 
 	if Input.is_action_just_released("run"):
 		running = false
@@ -161,6 +168,12 @@ func jump():
 		jump_double = true;
 	else:
 		jump_double = false;
+
+func enter_rotating_platform():
+	on_platform = true
+
+func exit_rotating_platform():
+	on_platform = false
 
 # Collecting coins
 

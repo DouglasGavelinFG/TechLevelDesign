@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://t4up1k146q78"]
+[gd_scene load_steps=5 format=3 uid="uid://t4up1k146q78"]
 
 [ext_resource type="PackedScene" uid="uid://bn0iedr5b0xbv" path="res://models/core_models/platform-large.glb" id="1_cbnxf"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_f6623"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18umq"]
+albedo_texture = ExtResource("2_f6623")
+uv1_offset = Vector3(0.2, 0, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnu1x"]
 size = Vector3(5, 0.5, 5)
 
 [node name="platform-large" instance=ExtResource("1_cbnxf")]
+
+[node name="platform-large2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_18umq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)

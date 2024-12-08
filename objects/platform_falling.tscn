@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://c8up71en5djgm"]
+[gd_scene load_steps=13 format=4 uid="uid://c8up71en5djgm"]
 
 [ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="1_gkggt"]
 [ext_resource type="Script" path="res://objects/platform_falling.gd" id="2_6ganw"]
@@ -48,6 +48,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_subup")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq3wg"]
+albedo_texture = ExtResource("3_uuuje")
+uv1_offset = Vector3(0.3, 0, 0)
 
 [sub_resource type="Animation" id="Animation_py1y8"]
 length = 0.001
@@ -117,6 +121,7 @@ shape = SubResource("ConcavePolygonShape3D_4mmvt")
 
 [node name="platform-falling2" parent="." index="2"]
 mesh = SubResource("ArrayMesh_6gl6g")
+surface_material_override/0 = SubResource("StandardMaterial3D_sq3wg")
 
 [node name="FallingPlatformAnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {

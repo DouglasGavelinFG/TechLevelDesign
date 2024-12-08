@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var rotation_vector = 0;
-@export var rotation_speed = 0.01;
+@export var rotation_vector = 0
+@export var rotation_speed = 0.01
 
 var time = 0.0
 
