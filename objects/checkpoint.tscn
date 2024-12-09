@@ -18,7 +18,7 @@ roughness = 0.4
 [sub_resource type="BoxShape3D" id="BoxShape3D_ekyr4"]
 size = Vector3(1, 1.5, 1)
 
-[node name="checkpoint" type="Node3D"]
+[node name="checkpoint" type="Node3D" groups=["Checkpoint"]]
 script = ExtResource("1_tieuc")
 jewel_material = SubResource("StandardMaterial3D_15vf6")
 activated_color = Color(0.329412, 0.721569, 0.513726, 1)
