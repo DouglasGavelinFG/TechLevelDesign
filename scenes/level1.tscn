@@ -89,7 +89,7 @@ font_size = 37
 shadow_color = Color(0, 0, 0, 0.376471)
 shadow_offset = Vector2(2, 2)
 
-[node name="Main" type="Node3D"]
+[node name="Level 1" type="Node3D"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 unique_name_in_owner = true
@@ -219,17 +219,20 @@ transform = Transform3D(0.999946, 0, -0.0104194, 0, 1, 0, 0.0104194, 0, 0.999946
 [node name="coin2" parent="World" instance=ExtResource("20_lfsn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41398, 1.50461, -1.70203)
 
+[node name="coin3" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.2947, 3.53919, -0.582448)
+
+[node name="coin4" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8017, 8.20095, -1.68408)
+
 [node name="coin5" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.6992, 3.53919, 0.48721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7129, 14.6778, -26.1395)
+
+[node name="coin7" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.055, 14.6778, -24.1124)
 
 [node name="coin6" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1885, 8.20095, -1.85759)
-
-[node name="coin10" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.2795, 14.6778, -26.2093)
-
-[node name="coin8" parent="World" instance=ExtResource("20_lfsn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6707, 3.53919, -1.3535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.0828, 3.53919, -0.679325)
 
 [node name="platform-grass-large-round2" parent="World" instance=ExtResource("21_oweua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -11.9602, 10.9263)
@@ -685,7 +688,11 @@ transform = Transform3D(0.741454, 0.0156623, -0.945765, -0.0240083, 1.20162, 0.0
 script = ExtResource("6_mnpsx")
 
 [node name="platform_large_cross_bg7" parent="World" instance=ExtResource("29_qmxgw")]
-transform = Transform3D(0.830422, 0.0160078, 0.651297, -0.0210843, 1.05528, 0.00094625, -0.651153, -0.0137548, 0.83058, -14.2979, 1.55465, -36.3604)
+transform = Transform3D(0.830422, 0.0160078, 0.651297, -0.0210843, 1.05528, 0.00094625, -0.651153, -0.0137548, 0.83058, -15.4038, 1.58273, -35.4932)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg55" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.475267, 0.00916158, 0.37275, -0.012067, 0.603957, 0.000541557, -0.372668, -0.00787214, 0.475357, -24.4116, 8.20479, -44.6726)
 script = ExtResource("6_mnpsx")
 
 [node name="platform_large_cross_bg4" parent="World" instance=ExtResource("29_qmxgw")]
@@ -834,7 +841,7 @@ rotation_speed = 0.005
 transform = Transform3D(-0.786935, 0, -0.617036, 0, 1, 0, 0.617036, 0, -0.786935, -25.7254, 18.5017, -14.4703)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/StaticBody3D6"]
-transform = Transform3D(4.56079, 0, 0, 0, 10.6876, -0.0179608, 0, 0.212303, 0.904165, -0.0183086, 1.14698, 6.32748)
+transform = Transform3D(4.56079, 0, 0, 0, 10.6897, -0.000473564, 0, 0.00559671, 0.904343, -0.0183086, 1.14654, 6.34803)
 mesh = SubResource("BoxMesh_fwqlt")
 surface_material_override/0 = SubResource("StandardMaterial3D_lp6v7")
 
