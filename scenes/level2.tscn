@@ -277,7 +277,7 @@ script = ExtResource("23_f5fd0")
 rotation_speed = -0.01
 
 [node name="platform_large_cross_bg21" parent="World" instance=ExtResource("33_koaex")]
-transform = Transform3D(-8.76379e-08, -2.00492, 0, 2.00492, -8.76379e-08, 0, 0, 0, 2.00492, -14.1304, 8.77335, 7.63948)
+transform = Transform3D(-8.76379e-08, -2.00492, 0, 2.00492, -8.76379e-08, 0, 0, 0, 2.00492, -14.1304, 8.77335, 9.00816)
 script = ExtResource("23_f5fd0")
 rotation_vector = 1
 
@@ -307,7 +307,7 @@ script = ExtResource("23_f5fd0")
 rotation_speed = -0.01
 
 [node name="platform_large_tall_bg2" parent="World" instance=ExtResource("20_jrqjm")]
-transform = Transform3D(2.57078, 0, 0, 0, 1, 0, 0, 0, 3.70392, -14.5555, 7.83529, 7.9293)
+transform = Transform3D(2.57078, 0, 0, 0, 1, 0, 0, 0, 3.70392, -14.5555, 6.30914, 7.9293)
 
 [node name="platform_large_tall_bg6" parent="World" instance=ExtResource("20_jrqjm")]
 transform = Transform3D(3.02615, 0, 0, 0, 1, 0, 0, 0, 3.08075, -27.4285, 29.8062, -5.04877)
@@ -459,6 +459,11 @@ rotation_vector = 2
 
 [node name="saw3" parent="World" instance=ExtResource("21_xl7o0")]
 transform = Transform3D(-3.00647e-07, 0, -6.878, 0, 6.878, 0, 6.878, 0, -3.00647e-07, -19.9012, 24.5795, -5.48284)
+script = ExtResource("23_f5fd0")
+rotation_vector = 2
+
+[node name="saw17" parent="World" instance=ExtResource("21_xl7o0")]
+transform = Transform3D(1.31417e-14, -6.878, 3.00647e-07, -3.00647e-07, -3.00647e-07, -6.878, 6.878, 0, -3.00647e-07, -10.3496, 9.82143, -0.683447)
 script = ExtResource("23_f5fd0")
 rotation_vector = 2
 
@@ -858,6 +863,12 @@ transform = Transform3D(1.13028, 0, 0, 0, 1.13028, 0, 0, 0, 1.13028, -48.8527, 1
 [node name="platform-large5" parent="World" instance=ExtResource("5_xhp2t")]
 transform = Transform3D(0.972454, 0, 0, 0, 0.972454, 0, 0, 0, 0.76535, -25.4477, 8.96529, -108.27)
 
+[node name="platform-medium" parent="World" instance=ExtResource("11_cbbet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98132, 12.5622, -0.691416)
+
+[node name="platform-medium3" parent="World" instance=ExtResource("11_cbbet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3816, 13.8107, 2.09739)
+
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
@@ -1000,7 +1011,7 @@ playback_type = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9741, 25.1861, -31.38)
 
 [node name="enemy16" parent="." instance=ExtResource("2_3vph1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7685, 25.1861, -15.939)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4781, 25.1861, -17.9451)
 
 [node name="enemy2" parent="." instance=ExtResource("2_3vph1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5603, 9.63015, -81.6444)
