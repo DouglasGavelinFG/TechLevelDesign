@@ -47,6 +47,11 @@
 auto_exposure_scale = 0.75
 dof_blur_far_distance = 0.01
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ev8yt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi28x"]
+albedo_color = Color(0.713726, 0.403922, 0.0705882, 1)
+
 [sub_resource type="Curve3D" id="Curve3D_5n82a"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -38.1144, 10.0481, -9.20018, 0, 0, 0, 0, 0, 0, -31.0353, 9.95732, -15.3771),
@@ -60,11 +65,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ev8yt"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi28x"]
-albedo_color = Color(0.713726, 0.403922, 0.0705882, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fwqlt"]
 
@@ -116,6 +116,12 @@ current = true
 fov = 40.0
 
 [node name="World" type="Node3D" parent="."]
+
+[node name="Bottom plane" type="MeshInstance3D" parent="World"]
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 69.967, -6.0031, -90.133)
+mesh = SubResource("PlaneMesh_ev8yt")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_hi28x")
 
 [node name="platform-moving" parent="World" instance=ExtResource("4_5ex8m")]
 transform = Transform3D(0.639546, 0, -0.768753, 0, 1, 0, 0.768753, 0, 0.639546, 6, 0, 0)
@@ -479,12 +485,6 @@ transform = Transform3D(-0.352544, 0, -0.935795, 0, 1, 0, 0.935795, 0, -0.352544
 [node name="poles3" parent="World" instance=ExtResource("36_rjg32")]
 transform = Transform3D(-0.00342092, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.00342092, 1.83554, 1.46209, -3.13057)
 
-[node name="Bottom plane" type="MeshInstance3D" parent="World"]
-transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 69.967, -6.0031, -90.133)
-mesh = SubResource("PlaneMesh_ev8yt")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_hi28x")
-
 [node name="trampoline" parent="World" instance=ExtResource("34_gp45o")]
 transform = Transform3D(0.816146, 7.4571e-06, -0.577846, 9.86986e-05, 1, 0.000152353, 0.577846, -0.000181376, 0.816146, -3.27142, 1.46913, 3.14473)
 
@@ -781,6 +781,10 @@ script = ExtResource("6_mnpsx")
 
 [node name="platform_large_cross_bg45" parent="World" instance=ExtResource("29_qmxgw")]
 transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.2866, -2.17786, 1.21434)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg56" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.287, 0.606, 1.214)
 script = ExtResource("6_mnpsx")
 
 [node name="platform_large_cross_bg46" parent="World" instance=ExtResource("29_qmxgw")]

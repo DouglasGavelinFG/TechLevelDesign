@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://do3yv1gfxfeym"]
+
+[ext_resource type="Script" path="res://objects/enemy.gd" id="1_45s4l"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l7o6q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr7ge"]
+transparency = 1
+albedo_color = Color(0.603922, 0.968627, 0.85098, 0.784314)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m7dh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fu2c3"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_j7n47"]
+resource_name = "blob"
+loop_mode = 1
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGSphere3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.5, 1, 1.1, 1.1, 1.1, 1, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_44cey"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGSphere3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwuif"]
+_data = {
+"RESET": SubResource("Animation_44cey"),
+"blob": SubResource("Animation_j7n47")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_45s4l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.05884, 0, 0, 0, 1.05884, 0, 0, 0, 1.05884, 0, 0, 0)
+shape = SubResource("SphereShape3D_l7o6q")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material = SubResource("StandardMaterial3D_wr7ge")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.661551, 0, 0, 0, 0.661551, 0, 0, 0, 0.661551, 0, 0, 0)
+material = SubResource("StandardMaterial3D_6m7dh")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.363626, 0, 0, 0, 0.363626, 0, 0, 0, 0.195473, 0, 0, -0.233745)
+material = SubResource("StandardMaterial3D_fu2c3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lwuif")
+}
+autoplay = "blob"
+speed_scale = 2.0

@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://do3yv1gfxfeym"]
+
+[ext_resource type="Script" path="res://objects/enemy.gd" id="1_45s4l"]
+[ext_resource type="PackedScene" uid="uid://bunxb353h3lje" path="res://objects/damage_dealer_area_3d.tscn" id="2_c68i0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_loeyo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l7o6q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr7ge"]
+transparency = 1
+albedo_color = Color(0.603922, 0.968627, 0.85098, 0.784314)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m7dh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fu2c3"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_44cey"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CSGSphere3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_j7n47"]
+resource_name = "blob"
+loop_mode = 1
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/CSGSphere3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.5, 1, 1.1, 1.1, 1.1, 1, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwuif"]
+_data = {
+"RESET": SubResource("Animation_44cey"),
+"blob": SubResource("Animation_j7n47")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qimju"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_45s4l")
+
+[node name="Sight3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sight3D"]
+transform = Transform3D(6.65899, 0, 0, 0, 6.65899, 0, 0, 0, 6.65899, 0, 0, 0)
+shape = SubResource("SphereShape3D_loeyo")
+
+[node name="BodyCollision3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.958462, 0, 0, 0, 0.958462, 0, 0, 0, 0.958462, 0, 0, 0)
+shape = SubResource("SphereShape3D_l7o6q")
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Body"]
+material = SubResource("StandardMaterial3D_wr7ge")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(0.661551, 0, 0, 0, 0.661551, 0, 0, 0, 0.661551, 0, 0, 0)
+material = SubResource("StandardMaterial3D_6m7dh")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(0.363626, 0, 0, 0, 0.363626, 0, 0, 0, 0.195473, 0, 0, -0.233745)
+material = SubResource("StandardMaterial3D_fu2c3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_lwuif")
+}
+autoplay = "blob"
+
+[node name="DamageDealerArea3D" parent="." instance=ExtResource("2_c68i0")]
+only_push = true
+
+[node name="CollisionShape3D" parent="DamageDealerArea3D" index="0"]
+transform = Transform3D(1.02442, 0, 0, 0, 1.02442, 0, 0, 0, 1.02442, 0, 0, 0)
+shape = SubResource("SphereShape3D_qimju")
+
+[connection signal="body_entered" from="Sight3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Sight3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="DamageDealerArea3D"]
