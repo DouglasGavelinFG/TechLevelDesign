@@ -151,7 +151,7 @@ movement_speed = 2.0
 ping_pong = true
 
 [node name="flag" parent="World" instance=ExtResource("7_dhnka")]
-transform = Transform3D(-0.468608, 0, 0.883406, 0, 1, 0, -0.883406, 0, -0.468608, -33.681, 30.209, -24.9588)
+transform = Transform3D(-0.468608, 0, 0.883406, 0, 1, 0, -0.883406, 0, -0.468608, -33.716, 30.2145, -25.0046)
 speedrun_mode = true
 
 [node name="trap-spikes" parent="World" instance=ExtResource("11_s1f4a")]
@@ -948,10 +948,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -196.0
-offset_top = -258.0
-offset_right = 196.0
-offset_bottom = -122.0
+offset_left = -437.0
+offset_top = -260.0
+offset_right = -45.0
+offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 0
@@ -961,6 +961,56 @@ theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("25_vfu23")
 theme_override_font_sizes/font_size = 60
 text = "Play Again?"
+icon = ExtResource("27_ct75u")
+flat = true
+icon_alignment = 1
+
+[node name="NextLevelButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -260.0
+offset_right = 440.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("26_xw2uw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("25_vfu23")
+theme_override_font_sizes/font_size = 60
+text = "Next Level"
+icon = ExtResource("27_ct75u")
+flat = true
+icon_alignment = 1
+
+[node name="RestartGameButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -260.0
+offset_right = 440.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("26_xw2uw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("25_vfu23")
+theme_override_font_sizes/font_size = 60
+text = "Restart Game"
 icon = ExtResource("27_ct75u")
 flat = true
 icon_alignment = 1
@@ -1022,3 +1072,5 @@ playback_type = 1
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="HUD/Control/NextLevelButton" to="HUD" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="HUD/Control/RestartGameButton" to="HUD" method="_on_restart_game_button_pressed"]

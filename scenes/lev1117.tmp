@@ -1,0 +1,1076 @@
+[gd_scene load_steps=53 format=3 uid="uid://e6jwbml72r4o"]
+
+[ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
+[ext_resource type="Script" path="res://scripts/view.gd" id="3_xcrwe"]
+[ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="4_5ex8m"]
+[ext_resource type="PackedScene" uid="uid://t4up1k146q78" path="res://objects/platform_large.tscn" id="5_ly2vk"]
+[ext_resource type="PackedScene" uid="uid://bs65o07otxbmm" path="res://objects/moving_object_path_3d.tscn" id="6_fuduw"]
+[ext_resource type="Script" path="res://objects/rotator.gd" id="6_mnpsx"]
+[ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="7_dhnka"]
+[ext_resource type="PackedScene" uid="uid://dwvhgrcyestak" path="res://objects/trap_spikes.tscn" id="11_s1f4a"]
+[ext_resource type="PackedScene" uid="uid://cxea8lmw7cy1l" path="res://objects/player_kill_volume.tscn" id="14_6of3h"]
+[ext_resource type="PackedScene" uid="uid://cyvet7kb6y80r" path="res://objects/checkpoint.tscn" id="15_4nog2"]
+[ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://objects/platform.tscn" id="16_82380"]
+[ext_resource type="PackedScene" uid="uid://d273gr0kmlcdm" path="res://objects/platform_large_bg.tscn" id="17_iicj1"]
+[ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="17_qgsha"]
+[ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="18_x8jhr"]
+[ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="19_qait6"]
+[ext_resource type="PackedScene" uid="uid://cq5nx4jpu3p7x" path="res://objects/platform_large_tall_bg.tscn" id="20_e6fqx"]
+[ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="20_lfsn4"]
+[ext_resource type="PackedScene" uid="uid://bxc40bahfkr6g" path="res://objects/platform_grass_larger_round.tscn" id="21_oweua"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="22_1dx8f"]
+[ext_resource type="PackedScene" uid="uid://c86a02uxe4xxo" path="res://objects/platform_tilting.tscn" id="22_4w2yn"]
+[ext_resource type="Texture2D" uid="uid://cd7oyc56ehkx1" path="res://sprites/coin.png" id="23_324j0"]
+[ext_resource type="PackedScene" uid="uid://c7ntm1s6rhcq6" path="res://objects/platform_large_tall.tscn" id="23_o5b7q"]
+[ext_resource type="LabelSettings" uid="uid://daohhjonjrdx8" path="res://themes/label_settings.tres" id="24_6hsja"]
+[ext_resource type="PackedScene" uid="uid://cykho438mydud" path="res://objects/saw_bg.tscn" id="24_550jv"]
+[ext_resource type="FontFile" uid="uid://d0cxd77jybrcn" path="res://fonts/lilita_one_regular.ttf" id="25_vfu23"]
+[ext_resource type="Theme" uid="uid://d3avl0mr4r87l" path="res://themes/default_theme.tres" id="26_xw2uw"]
+[ext_resource type="Texture2D" uid="uid://dm50aa4qogm65" path="res://sprites/button_rectangle_depth_gloss.png" id="27_ct75u"]
+[ext_resource type="PackedScene" uid="uid://bprrlrsrodjse" path="res://objects/saw.tscn" id="27_mtmvm"]
+[ext_resource type="PackedScene" uid="uid://c1bkkjdso0ii5" path="res://objects/platform_large_cross_bg.tscn" id="29_qmxgw"]
+[ext_resource type="PackedScene" uid="uid://bgyrgaegp546c" path="res://objects/platform_large_cross.tscn" id="32_6g28v"]
+[ext_resource type="PackedScene" uid="uid://bxb8ls3luul0p" path="res://objects/platform_large_tall_rotating.tscn" id="33_7d8wh"]
+[ext_resource type="PackedScene" uid="uid://ytqajrdi7fqj" path="res://objects/trampoline.tscn" id="34_gp45o"]
+[ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="34_ihh22"]
+[ext_resource type="PackedScene" uid="uid://b2d7lo3evi0lb" path="res://objects/ladder.tscn" id="34_jggsw"]
+[ext_resource type="PackedScene" uid="uid://cts2dtt01cp8l" path="res://objects/platform_big_cross.tscn" id="35_ovxwl"]
+[ext_resource type="PackedScene" uid="uid://brugk4l7k7m4" path="res://objects/platform_overhang_2.tscn" id="36_3fthw"]
+[ext_resource type="PackedScene" uid="uid://dtjmykcd148i6" path="res://objects/poles_2.tscn" id="36_rjg32"]
+[ext_resource type="PackedScene" uid="uid://crypveukb1r20" path="res://objects/platform_ramp_2.tscn" id="37_v8krl"]
+[ext_resource type="PackedScene" uid="uid://cxs63sfc2jjdk" path="res://objects/platform_2.tscn" id="38_svh8n"]
+[ext_resource type="AudioStream" uid="uid://sr07vsnvrtxu" path="res://sounds/265872_Clocktown.MP3" id="38_ycr00"]
+[ext_resource type="PackedScene" uid="uid://catdvq7bush68" path="res://objects/platform_fortified_2.tscn" id="39_7c11p"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
+auto_exposure_scale = 0.75
+dof_blur_far_distance = 0.01
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ev8yt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi28x"]
+albedo_color = Color(0.713726, 0.403922, 0.0705882, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_5n82a"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -38.1144, 10.0481, -9.20018, 0, 0, 0, 0, 0, 0, -31.0353, 9.95732, -15.3771),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_e3frv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -32.4192, 12.3571, -38.1575, 0, 0, 0, 0, 0, 0, -30.2026, 12.369, -39.9665),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_fwqlt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lp6v7"]
+albedo_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri8jt"]
+font = ExtResource("25_vfu23")
+font_size = 128
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4d2s"]
+font = ExtResource("25_vfu23")
+font_size = 32
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6r7m"]
+font = ExtResource("25_vfu23")
+font_size = 37
+shadow_color = Color(0, 0, 0, 0.376471)
+shadow_offset = Vector2(2, 2)
+
+[node name="Level 1" type="Node3D"]
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
+environment = ExtResource("1_apxki")
+camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
+
+[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_hgw2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.633547, 3.7732, 25.825)
+axis_lock_angular_y = true
+view = NodePath("../View")
+movement_speed = 300
+movement_run_speed = 500
+jump_strength = 10
+
+[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
+process_mode = 3
+transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)
+script = ExtResource("3_xcrwe")
+target = NodePath("../Player")
+
+[node name="Camera" type="Camera3D" parent="View"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+current = true
+fov = 40.0
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Bottom plane" type="MeshInstance3D" parent="World"]
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 69.967, -6.0031, -90.133)
+mesh = SubResource("PlaneMesh_ev8yt")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_hi28x")
+
+[node name="platform-moving" parent="World" instance=ExtResource("4_5ex8m")]
+transform = Transform3D(0.639546, 0, -0.768753, 0, 1, 0, 0.768753, 0, 0.639546, 6, 0, 0)
+
+[node name="platform-moving2" parent="World" instance=ExtResource("4_5ex8m")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, 6, 0, 0)
+
+[node name="platform-large" parent="World" instance=ExtResource("5_ly2vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9563, 3.06078, -1.1764)
+
+[node name="platform-large2" parent="World" instance=ExtResource("5_ly2vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.0501, 4.09178, 1.25292)
+
+[node name="platform-large3" parent="World" instance=ExtResource("5_ly2vk")]
+transform = Transform3D(0.592671, 0, 0, 0, 1, 0, 0, 0, 0.592671, -75.5301, 4.19522, 4.95927)
+
+[node name="moving_object_path" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
+curve = SubResource("Curve3D_5n82a")
+object_to_move = NodePath("../platform-moving")
+movement_speed = 3.0
+ping_pong = true
+
+[node name="moving_object_path2" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
+curve = SubResource("Curve3D_e3frv")
+object_to_move = NodePath("../platform-moving2")
+movement_speed = 2.0
+ping_pong = true
+
+[node name="flag" parent="World" instance=ExtResource("7_dhnka")]
+transform = Transform3D(-0.468608, 0, 0.883406, 0, 1, 0, -0.883406, 0, -0.468608, -33.681, 30.209, -24.9588)
+speedrun_mode = true
+
+[node name="trap-spikes" parent="World" instance=ExtResource("11_s1f4a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -64.4667, 2.71517, 0.0481997)
+
+[node name="trap-spikes2" parent="World" instance=ExtResource("11_s1f4a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -64.4667, 2.71517, -0.751903)
+
+[node name="trap-spikes3" parent="World" instance=ExtResource("11_s1f4a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -63.5128, 2.71517, 0.0481997)
+
+[node name="trap-spikes4" parent="World" instance=ExtResource("11_s1f4a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -63.5128, 2.71517, -0.751903)
+
+[node name="player_kill_volume" parent="World" instance=ExtResource("14_6of3h")]
+transform = Transform3D(1, 0, 2.98023e-08, -4.09782e-08, 1, 2.23517e-07, -2.98023e-08, -5.96046e-08, 1, 0, -10, 0)
+
+[node name="checkpoint" parent="World" instance=ExtResource("15_4nog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6196, 4.9922, -2.11142)
+
+[node name="checkpoint2" parent="World" instance=ExtResource("15_4nog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.9823, 4.69522, 1.26275)
+
+[node name="checkpoint3" parent="World" instance=ExtResource("15_4nog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.7243, 10.1519, -6.49144)
+
+[node name="checkpoint4" parent="World" instance=ExtResource("15_4nog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2501, 11.2142, -33.7933)
+
+[node name="checkpoint5" parent="World" instance=ExtResource("15_4nog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.6393, 16.1582, -15.3374)
+
+[node name="platform-medium3" parent="World" instance=ExtResource("17_qgsha")]
+transform = Transform3D(0.853178, 0, -0.52162, 0, 1, 0, 0.52162, 0, 0.853178, -40.7695, 9.64996, -6.51545)
+
+[node name="platform4" parent="World" instance=ExtResource("16_82380")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.6531, 2.98444, -0.23626)
+
+[node name="platform-medium5" parent="World" instance=ExtResource("17_qgsha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.0357, 7.66675, -1.70011)
+
+[node name="platform-falling4" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.5546, 2.55553, -0.280927)
+
+[node name="platform7" parent="World" instance=ExtResource("16_82380")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -63.9822, 2.20613, -0.362102)
+
+[node name="platform-medium" parent="World" instance=ExtResource("17_qgsha")]
+transform = Transform3D(0.723809, 0, -0.508876, 0, 1, 0, 0.427872, 0, 0.86084, -5.98551, 3.41533, 1.30557)
+
+[node name="platform-falling" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.999999, 0.00174533, 0, -0.00174533, 0.999998, 0, 0, 0, 1, -71.0366, 6.55674, 5.05187)
+
+[node name="platform-falling2" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.999999, 0.00174533, 0, -0.00174533, 0.999998, 0, 0, 0, 1, -69.6551, 7.00432, 1.9318)
+
+[node name="platform-falling3" parent="World" instance=ExtResource("18_x8jhr")]
+transform = Transform3D(0.466973, 0.000815023, 0.884272, -0.00174533, 0.999998, 0, -0.884271, -0.00154335, 0.466973, -53.061, 7.96328, -7.0228)
+
+[node name="platform-grass-large-round" parent="World" instance=ExtResource("19_qait6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498435, 1.04456, 6.24435)
+
+[node name="platform-grass-large-round3" parent="World" instance=ExtResource("19_qait6")]
+transform = Transform3D(-0.989085, 0, 0.147343, 0, 1, 0, -0.147343, 0, -0.989085, -2.61927, 0.969128, 3.39838)
+
+[node name="platform-grass-large-round4" parent="World" instance=ExtResource("19_qait6")]
+transform = Transform3D(-0.977582, 0, -0.210557, 0, 1, 0, 0.210557, 0, -0.977582, 0.406457, 0.754891, 5.06137)
+
+[node name="coin" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(0.999946, 0, -0.0104194, 0, 1, 0, 0.0104194, 0, 0.999946, -7.9311, 5.74402, -1.00171)
+
+[node name="coin2" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41398, 1.50461, -1.70203)
+
+[node name="coin3" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.2947, 3.53919, -0.582448)
+
+[node name="coin4" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8017, 8.20095, -1.68408)
+
+[node name="coin5" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7129, 14.6778, -26.1395)
+
+[node name="coin7" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.055, 14.6778, -24.1124)
+
+[node name="coin6" parent="World" instance=ExtResource("20_lfsn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.0828, 3.53919, -0.679325)
+
+[node name="platform-grass-large-round2" parent="World" instance=ExtResource("21_oweua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -11.9602, 10.9263)
+
+[node name="platform-grass-large-round6" parent="World" instance=ExtResource("21_oweua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66603, -11.5482, 10.9263)
+
+[node name="platform-grass-large-round5" parent="World" instance=ExtResource("21_oweua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951785, -11.9602, 25.7337)
+
+[node name="platform-grass-large-round8" parent="World" instance=ExtResource("21_oweua")]
+transform = Transform3D(2.21888, 0, 0, 0, 1, 0, 0, 0, 2.21888, -0.951785, -13.374, 25.7337)
+
+[node name="platform-grass-large-round7" parent="World" instance=ExtResource("21_oweua")]
+transform = Transform3D(1, 0, 0, 0, 0.999206, -0.0398524, 0, 0.0398524, 0.999206, -1.40999, -12.2052, 22.1727)
+
+[node name="platform_large-bg" parent="World" instance=ExtResource("17_iicj1")]
+transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, -6.76296, 5.78922, -1.86824)
+
+[node name="platform-tilting" parent="World" instance=ExtResource("22_4w2yn")]
+transform = Transform3D(0.866021, 0.00325682, -0.499997, -0.00174532, 0.999992, 0.00349065, 0.500005, -0.00215032, 0.86602, -7.52252, 5.21718, -1.69964)
+
+[node name="platform_large-bg2" parent="World" instance=ExtResource("17_iicj1")]
+transform = Transform3D(-1, -2.08616e-07, 8.88178e-15, 0, -4.37114e-08, 1, -2.08616e-07, 1, 4.37114e-08, -59.0522, 8.78095, -2.87418)
+
+[node name="platform_large-bg3" parent="World" instance=ExtResource("17_iicj1")]
+transform = Transform3D(-1, -2.08616e-07, 8.88178e-15, 0, -4.37114e-08, 1, -2.08616e-07, 1, 4.37114e-08, -64.0462, 8.78095, -2.90757)
+
+[node name="platform_large-bg4" parent="World" instance=ExtResource("17_iicj1")]
+transform = Transform3D(-1, -2.08616e-07, 8.88178e-15, 0, -4.37114e-08, 1, -2.08616e-07, 1, 4.37114e-08, -69.0192, 8.78095, -2.90757)
+
+[node name="platform-tilting2" parent="World" instance=ExtResource("22_4w2yn")]
+transform = Transform3D(0.999999, 0.00174533, -8.9407e-08, -0.00174532, 0.999992, 0.00349065, 6.49691e-06, -0.00349064, 0.999994, -59.9029, 7.49969, -2.35546)
+
+[node name="platform-tilting8" parent="World" instance=ExtResource("22_4w2yn")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -28.0137, 9.06646, -20.2204)
+
+[node name="platform-tilting9" parent="World" instance=ExtResource("22_4w2yn")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -24.7871, 9.23307, -22.7504)
+
+[node name="platform-tilting3" parent="World" instance=ExtResource("22_4w2yn")]
+transform = Transform3D(0.999999, 0.00174533, -8.9407e-08, -0.00174532, 0.999992, 0.00349065, 6.49691e-06, -0.00349064, 0.999994, -64.5599, 7.49969, -2.35546)
+
+[node name="platform-tilting4" parent="World" instance=ExtResource("22_4w2yn")]
+transform = Transform3D(0.999999, 0.00174533, -8.9407e-08, -0.00174532, 0.999992, 0.00349065, 6.49691e-06, -0.00349064, 0.999994, -69.1509, 7.49969, -2.35546)
+
+[node name="platform-large-tall" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7481, 4.47412, -2.12756)
+
+[node name="platform-large-tall7" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1.4269, 0, 0, 0, 1, 0, 0, 0, 1.65666, -54.7602, 3.00918, -0.796742)
+
+[node name="platform-large-tall9" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.224, 1.94178, 2.5096)
+
+[node name="platform-large-tall12" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.4891, 2.99226, -0.341364)
+
+[node name="platform_large_tall_bg3" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(1.41413, 0, 0, 0, 1, 0, 0, 0, 1, -59.9709, 12.358, -4.99285)
+
+[node name="platform_large_tall_bg4" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(1.41413, 0, 0, 0, 1, 0, 0, 0, 1, -68.8856, 12.358, -4.99285)
+
+[node name="platform-large-tall-rotating" parent="World" instance=ExtResource("33_7d8wh")]
+transform = Transform3D(0.699098, 0, 0, 0, 1.00065, 0, 0, 0, 0.500324, -34.7644, 2.09248, -1.12428)
+
+[node name="platform-large-tall_bg" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89229, 7.15675, -4.56657)
+
+[node name="platform-large-tall_bg2" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(1.10613, 0, 0, 0, 1, 0, 0, 0, 1, -0.234374, 5.57854, -6.27477)
+
+[node name="platform-large-tall14" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30688, 1.03641, -1.91252)
+
+[node name="platform_large_tall_bg" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(2.42636, 0, 0, 0, 1, 0, 0, 0, 1.77394, -25.1559, 10.7399, 20.113)
+
+[node name="platform_large_tall_bg6" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(1.84866, 0, 0, 0, 1, 0, 0, 0, 1.95586, -18.3001, 8.14266, 22.5024)
+
+[node name="platform_large_tall_bg2" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(2.42636, 0, 0, 0, 1, 0, 0, 0, 1.77394, -57.6223, 10.3563, 20.1969)
+
+[node name="platform-large-tall4" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(2.92249, 0, 1.83669, 0, 1.53118, 0, -2.29383, 0, 2.34006, -33.6595, 25.0478, -24.9711)
+
+[node name="platform-large-tall19" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(2.21783, 0, 1.27803, 0, 1.53118, 0, -1.74075, 0, 1.62829, -33.6595, 27.2383, -24.9711)
+
+[node name="platform-large-tall22" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(2.56675, 0, 1.5593, 0, 1.53118, 0, -2.01462, 0, 1.98664, -33.6595, 26.1899, -24.9711)
+
+[node name="platform-large-tall20" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(0.893281, 0, 0.558364, 0, 0.950351, 0, -0.701127, 0, 0.71139, -33.6882, 29.744, -24.9568)
+
+[node name="platform-large-tall6" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(3.14821, 0, -1.57952, 0, 1.53118, 0, 1.97265, 0, 2.5208, -45.9331, 13.9139, -19.686)
+
+[node name="platform-large-tall24" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1.41956, 0, -0.758236, 0, 1.53118, 0, 0.889487, 0, 1.21009, -46.4522, 15.3913, -16.0677)
+
+[node name="platform_large_tall_bg8" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(0.532161, 0, -0.333449, 0, 1.531, 0, 0.333449, 0, 0.532161, -53.0375, 20.3588, -21.2875)
+
+[node name="platform-large-tall21" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(1.57327, 0, 0.989107, 0, 0.824, 0, -1.23484, 0, 1.26019, -21.3411, 10.7515, -31.0501)
+
+[node name="platform_large_tall_bg7" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(1.42957, 0, 0.41618, 0, 1.0461, 0, -1.12205, 0, 0.53024, -20.2899, 14.6162, -28.5404)
+
+[node name="platform_large_tall_bg5" parent="World" instance=ExtResource("20_e6fqx")]
+transform = Transform3D(0.871195, 0, 0.769043, 0, 0.951233, 0, -0.683793, 0, 0.97981, -24.011, 16.5834, -30.1991)
+
+[node name="saw" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(0, 0.707107, 0.707107, 1, -4.37114e-08, 4.37114e-08, 6.18172e-08, 0.707107, -0.707107, -26.431, 8.61852, -21.326)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.1
+
+[node name="saw5" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(1.40972e-14, 1.33714, 1.33714, 1.984, -8.26582e-08, 8.26582e-08, 1.22645e-07, 1.33714, -1.33714, -26.431, 9.46017, -21.326)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.1
+
+[node name="saw_bg8" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(-3.32845, -0.0298786, 4.19751, -0.0594255, 5.35677, -0.00899156, -4.1972, -0.0521489, -3.32857, -28.9851, 12.0029, -33.834)
+script = ExtResource("6_mnpsx")
+
+[node name="saw_bg7" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(-2.1234, -0.0151147, -1.68376, 0.00454856, 2.70983, -0.0300616, 1.68383, -0.0263806, -2.12324, -21.7434, 15.2552, -28.0505)
+script = ExtResource("6_mnpsx")
+rotation_vector = 1
+
+[node name="saw_bg6" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(-4.55477, -0.0694219, -3.61122, 0.00975685, 5.81173, -0.12403, 3.61187, -0.103244, -4.55361, -27.1147, 19.6819, -20.7156)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="saw_bg10" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(-4.55477, -0.0694219, -3.61122, 0.00975685, 5.81173, -0.12403, 3.61187, -0.103244, -4.55361, -31.4855, 19.6819, -17.3513)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="saw14" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(0, 0.707107, 0.707107, 1, -4.37114e-08, 4.37114e-08, 6.18172e-08, 0.707107, -0.707107, -29.6867, 8.61852, -18.6929)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.1
+
+[node name="saw15" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(0, 1.33726, 1.33726, 1.98427, -8.26654e-08, 8.26654e-08, 1.22662e-07, 1.33726, -1.33726, -29.6867, 9.46017, -18.6929)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.1
+
+[node name="saw2" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(2.82711, 0, 0.119826, 0, 2.82965, 0, -0.119826, 0, 2.82711, -4.61564, 5.05399, -1.96803)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.05
+
+[node name="saw21" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(2.82711, 0, 0.119826, 0, 2.82965, 0, -0.119826, 0, 2.82711, -0.72738, 2.8719, -3.69599)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.05
+
+[node name="saw_bg4" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(7.93524, 0, 5.26577, 0, 9.52346, 0, -5.26577, 0, 7.93524, -30.8678, 2.74037, -16.6064)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="saw_bg9" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(4.72586, 0, 0, 0, 4.72586, 0, 0, 0, 4.72586, -16.4729, 2.74037, 17.5215)
+script = ExtResource("6_mnpsx")
+
+[node name="saw_bg5" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(7.93524, 0, 5.26577, 0, 9.52346, 0, -5.26577, 0, 7.93524, -26.33, -1.53617, -19.6177)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.01
+
+[node name="saw_bg2" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(5.22343, 0, -2.59657, 0, 5.83322, 0, 2.59657, 0, 5.22343, -45.4492, 1.93887, -10.0785)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="saw_bg3" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(2.94478, 0, 5.03535, 0, 5.83322, 0, -5.03535, 0, 2.94478, -39.8768, 3.55625, -12.0182)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="saw3" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(-2.82711, 0, -0.119826, 0, 2.82965, 0, 0.119826, 0, -2.82711, -4.16128, 2.96797, -2.00465)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+rotation_speed = -0.05
+
+[node name="platform-ramp1" parent="World" instance=ExtResource("37_v8krl")]
+transform = Transform3D(0.00427576, 0.381248, 0.924463, -0.0017633, 0.924473, -0.381244, -0.999989, 1.86265e-09, 0.00462508, -15.0781, 3.62417, -1.54843)
+
+[node name="platform10" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.76319, 12.2689)
+
+[node name="platform11" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.76319, 13.2733)
+
+[node name="platform12" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.76319, 14.2457)
+
+[node name="platform16" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.540546, 1.54179, 20.6453)
+
+[node name="platform13" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(0.900736, 0.217604, 0.37593, 0, 0.865466, -0.500967, -0.434367, 0.451239, 0.779556, -2.91417, 1.43025, 21.8458)
+
+[node name="platform14" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(0.900736, -0.321577, 0.291998, 0, 0.672238, 0.740335, -0.434367, -0.666847, 0.605509, -2.35827, 1.46154, 23.403)
+
+[node name="platform15" parent="World" instance=ExtResource("38_svh8n")]
+transform = Transform3D(0.900736, -0.175411, 0.397373, 0, 0.914833, 0.403833, -0.434367, -0.363747, 0.824024, -2.42635, 1.56244, 21.7325)
+
+[node name="platform-fortified" parent="World" instance=ExtResource("39_7c11p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0538, 4.96174, -3.39647)
+
+[node name="platform-fortified2" parent="World" instance=ExtResource("39_7c11p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5664, 16.0902, -18.4676)
+
+[node name="platform-fortified4" parent="World" instance=ExtResource("39_7c11p")]
+transform = Transform3D(0.061937, 0, 0.99808, 0.188698, 0.981965, -0.0117099, -0.98008, 0.189061, 0.0608199, -48.9316, 16.1829, -17.679)
+
+[node name="platform-overhang" parent="World" instance=ExtResource("36_3fthw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39962, 0.171858, 24.9581)
+
+[node name="poles" parent="World" instance=ExtResource("36_rjg32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51429, 0.416981, 23.9661)
+
+[node name="poles2" parent="World" instance=ExtResource("36_rjg32")]
+transform = Transform3D(-0.352544, 0, -0.935795, 0, 1, 0, 0.935795, 0, -0.352544, 1.66136, 1.46209, -2.08646)
+
+[node name="poles3" parent="World" instance=ExtResource("36_rjg32")]
+transform = Transform3D(-0.00342092, 0, -0.999994, 0, 1, 0, 0.999994, 0, -0.00342092, 1.83554, 1.46209, -3.13057)
+
+[node name="trampoline" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.816146, 7.4571e-06, -0.577846, 9.86986e-05, 1, 0.000152353, 0.577846, -0.000181376, 0.816146, -3.27142, 1.46913, 3.14473)
+
+[node name="trampoline2" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.3401, 4.79957, 4.93631)
+
+[node name="trampoline4" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.682764, 0, 0.730639, 0, 1, 0, -0.730639, 0, 0.682764, -43.1133, 16.2804, -16.4532)
+
+[node name="trampoline9" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.785166, 0, 0.619286, 0, 1, 0, -0.619286, 0, 0.785166, -35.5133, 28.0883, -19.4181)
+
+[node name="trampoline10" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.785166, 0, 0.619286, 0, 1, 0, -0.619286, 0, 0.785166, -27.7968, 28.0883, -25.352)
+
+[node name="trampoline11" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.785166, 0, 0.619286, 0, 1, 0, -0.619286, 0, 0.785166, -31.7659, 28.0883, -30.4846)
+
+[node name="trampoline12" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.785166, 0, 0.619286, 0, 1, 0, -0.619286, 0, 0.785166, -39.5431, 28.0883, -24.5159)
+
+[node name="trampoline5" parent="World" instance=ExtResource("34_gp45o")]
+transform = Transform3D(0.784636, 0, 0.619957, 0, 1, 0, -0.619957, 0, 0.784636, -17.1687, 8.88367, -35.6482)
+
+[node name="platform-large-tall2" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -13.2668, 8.06685, -30.0366)
+
+[node name="platform-large-tall3" parent="World" instance=ExtResource("23_o5b7q")]
+transform = Transform3D(0.629548, 0, 0.493629, 0, 1, 0, -0.493629, 0, 0.629548, -26.9931, 11.089, -42.5978)
+
+[node name="platform21" parent="World" instance=ExtResource("16_82380")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -17.1789, 8.34074, -35.6444)
+
+[node name="ladder" parent="World" instance=ExtResource("34_jggsw")]
+transform = Transform3D(-0.0137918, -0.0666222, 0.997683, -0.000920886, 0.997778, 0.0666158, -0.999905, 0, -0.0138225, -15.2327, 3.51145, -2.4244)
+
+[node name="platform-ramp2" parent="World" instance=ExtResource("37_v8krl")]
+transform = Transform3D(0.641101, -0.291544, -0.709925, -0.00176336, 0.924473, -0.381244, 0.767455, 0.245667, 0.592166, -38.8557, 14.8619, -16.597)
+
+[node name="ladder3" parent="World" instance=ExtResource("34_jggsw")]
+transform = Transform3D(0.490276, -0.0576097, 0.869661, -0.000920886, 0.997778, 0.0666158, -0.871567, -0.033461, 0.489134, -41.3366, 14.7294, -16.1532)
+
+[node name="platform-fortified3" parent="World" instance=ExtResource("39_7c11p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2018, 3.51307, 2.18159)
+
+[node name="platform-large10" parent="World" instance=ExtResource("32_6g28v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.6358, 1.97256, -1.01605)
+script = ExtResource("6_mnpsx")
+
+[node name="platform-large11" parent="World" instance=ExtResource("32_6g28v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6503, 1.97256, -1.01605)
+script = ExtResource("6_mnpsx")
+rotation_speed = -0.01
+
+[node name="platform_large_cross_bg22" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -27.9589, -5.53654, -35.0941)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg24" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.320691, -0.00152802, 0.251457, 0.00194174, 0.407519, 0, -0.251454, 0.00119812, 0.320695, -22.2488, 15.0636, -32.0987)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg23" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -27.9589, 3.14907, -35.0941)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-2.52485e-08, -0.740774, 0.580841, 0.847199, -4.11473e-08, 0, 0, 0.580841, 0.740774, -52.8178, 20.3588, -21.4676)
+script = ExtResource("6_mnpsx")
+rotation_vector = 1
+
+[node name="platform_large_cross_bg20" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.34871, -0.762387, 0.0131683, 0.0211859, -0.0076165, 1.48042, -0.810032, 1.26918, 0.0167943, -56.7027, 9.68653, -26.8379)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg21" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.970848, 0, -1.16512, 0, 1.48057, 0, 1.23817, 0, 0.913568, -39.4709, -6.15951, -34.7782)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg41" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.6358, -4.18176, -1.01605)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg40" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6503, -4.18176, -1.01605)
+script = ExtResource("6_mnpsx")
+rotation_speed = -0.01
+
+[node name="platform_large_cross_bg39" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.3939, -4.18176, 0.78831)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg38" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.9164, -2.181, -5.12735)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg37" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4084, -4.18176, 0.78831)
+script = ExtResource("6_mnpsx")
+rotation_speed = -0.01
+
+[node name="platform_large_cross_bg19" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.395882, 0, 0, 0, 0.395882, 0, 0, 0, 0.395882, -36.9032, -0.0250649, -1.14802)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg3" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -41.7947, -2.34065, -13.1276)
+script = ExtResource("6_mnpsx")
+
+[node name="platform-large14" parent="World" instance=ExtResource("32_6g28v")]
+transform = Transform3D(-0.531399, 0, -0.847122, 0, 1, 0, 0.847122, 0, -0.531399, -50.1829, 8.55067, -13.3034)
+script = ExtResource("6_mnpsx")
+rotation_speed = -0.01
+
+[node name="platform-large21" parent="World" instance=ExtResource("32_6g28v")]
+transform = Transform3D(-0.531399, 0, -0.847122, 0, 1, 0, 0.847122, 0, -0.531399, -45.0466, 8.94675, -10.3883)
+script = ExtResource("6_mnpsx")
+rotation_speed = -0.01
+
+[node name="platform-large22" parent="World" instance=ExtResource("32_6g28v")]
+transform = Transform3D(-0.617036, 0, 0.786935, 0, 1, 0, -0.786935, 0, -0.617036, -19.1603, 9.8191, -26.3392)
+script = ExtResource("6_mnpsx")
+
+[node name="platform-large23" parent="World" instance=ExtResource("32_6g28v")]
+transform = Transform3D(-0.525356, 0, 0.786935, 0, 1, 0, -0.670012, 0, -0.617036, -23.1798, 10.6685, -37.4019)
+script = ExtResource("6_mnpsx")
+rotation_speed = -0.01
+
+[node name="platform_large_cross_bg27" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-3.3736e-08, 0, -1.33852, 0, 1.33852, 0, 0.771792, 0, -5.85085e-08, -25.1581, 4.35459, 13.8787)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg35" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-8.02917e-08, 0, -1.33852, -1.83686, -5.85086e-08, 5.85085e-08, -8.02918e-08, 1.33852, 7.31286e-15, -25.1581, 13.7489, 19.9865)
+script = ExtResource("6_mnpsx")
+rotation_vector = 1
+
+[node name="platform_large_cross_bg36" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-8.02917e-08, 0, -1.33852, -1.83686, -5.85086e-08, 5.85085e-08, -8.02918e-08, 1.33852, 7.31286e-15, -57.2776, 9.66206, 19.3757)
+script = ExtResource("6_mnpsx")
+rotation_vector = 1
+
+[node name="platform_large_cross_bg53" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1.23734e-07, -0.58887, 0, 0.94357, 7.7221e-08, 0, 0, 0, 0.58887, -59.8999, 13.9609, -5.13631)
+script = ExtResource("6_mnpsx")
+rotation_vector = 1
+rotation_speed = -0.01
+
+[node name="platform_large_cross_bg54" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(1.23734e-07, -0.58887, 0, 0.94357, 7.7221e-08, 0, 0, 0, 0.58887, -68.7601, 13.9609, -5.13631)
+script = ExtResource("6_mnpsx")
+rotation_vector = 1
+
+[node name="platform_large_cross_bg28" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-3.3736e-08, 0, -1.33852, 0, 1.33852, 0, 0.771792, 0, -5.85085e-08, -25.1581, -4.4584, 13.8787)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg29" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.771792, 0, 6.39488e-14, 0, 1.33852, 0, -4.9738e-14, 0, 1.33852, -33.0933, -4.4584, 20.1228)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg30" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.771792, 0, 6.39488e-14, 0, 1.33852, 0, -4.9738e-14, 0, 1.33852, -33.0933, 4.54423, 20.1228)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg31" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.771792, 0, 6.39488e-14, 0, 1.33852, 0, -4.9738e-14, 0, 1.33852, -49.7291, 4.54423, 20.0634)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg32" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.771792, 0, 6.39488e-14, 0, 1.33852, 0, -4.9738e-14, 0, 1.33852, -49.7291, -3.65117, 20.0634)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg33" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-3.37361e-08, 0, 1.33852, 0, 1.33852, 0, -0.771792, 0, -5.85086e-08, -57.3135, 4.54423, 13.8723)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg34" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-3.37361e-08, 0, 1.33852, 0, 1.33852, 0, -0.771792, 0, -5.85086e-08, -57.3135, -3.65117, 13.8723)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg25" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.271045, 0, 2.56514e-15, 0, 0.966441, 0, 1.28257e-15, 0, 0.966441, 3.34494, 1.10499, -6.25882)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg26" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.375397, 0, 3.55271e-15, 0, 1.33852, 0, 1.77636e-15, 0, 1.33852, -12.9439, 3.7787, 22.2857)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg2" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.865936, 0.014381, -0.499948, -0.0124543, 0.999897, 0.00719051, 0.5, 0, 0.866025, -41.2104, 3.27581, -12.8052)
+script = ExtResource("6_mnpsx")
+
+[node name="saw20" parent="World" instance=ExtResource("27_mtmvm")]
+transform = Transform3D(3.69497, 0, 2.89722, 0, 4.69539, 0, -2.89722, 0, 3.69497, -20.1497, -4.61727, -25.1621)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="platform_large_cross_bg6" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.741454, 0.0156623, -0.945765, -0.0240083, 1.20162, 0.00107748, 0.945585, 0.0182278, 0.741619, -17.4628, -0.894634, -24.8141)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg7" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.830422, 0.0160078, 0.651297, -0.0210843, 1.05528, 0.00094625, -0.651153, -0.0137548, 0.83058, -15.4038, 1.58273, -35.4932)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg55" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.475267, 0.00916158, 0.37275, -0.012067, 0.603957, 0.000541557, -0.372668, -0.00787214, 0.475357, -24.4116, 8.20479, -44.6726)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg4" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -44.5773, 1.63334, -11.4098)
+script = ExtResource("6_mnpsx")
+
+[node name="saw_bg" parent="World" instance=ExtResource("24_550jv")]
+transform = Transform3D(5.22343, 0, -2.59657, 0, 5.83322, 0, 2.59657, 0, 5.22343, -52.2647, 1.93887, -14.3552)
+script = ExtResource("6_mnpsx")
+rotation_vector = 2
+
+[node name="platform_large_cross_bg5" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -51.3928, 1.63334, -15.6866)
+script = ExtResource("6_mnpsx")
+
+[node name="spike-block-wide" parent="World" instance=ExtResource("34_ihh22")]
+transform = Transform3D(0.964189, 0, -0.791554, 0, 1, 0, 1.24891, 0, 0.611099, -15.4942, 9.57034, -28.3247)
+
+[node name="spike-block-wide3" parent="World" instance=ExtResource("34_ihh22")]
+transform = Transform3D(0.287778, 0.539097, -0.791554, -0.882176, 0.470919, 2.98023e-08, 0.372758, 0.69829, 0.611099, -48.5597, 16.2396, -16.5082)
+
+[node name="spike-block-wide4" parent="World" instance=ExtResource("34_ihh22")]
+transform = Transform3D(-0.300816, 0.713933, -0.632305, -0.928569, -0.370413, 0.0235305, -0.217415, 0.594217, 0.774362, -46.3892, 16.6268, -13.6526)
+
+[node name="spike-block-wide2" parent="World" instance=ExtResource("34_ihh22")]
+transform = Transform3D(0.791554, 0, 0.611099, 0, 1, 0, -0.611099, 0, 0.791554, -16.1753, 8.76885, -33.8555)
+
+[node name="platform_large_cross_bg8" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.395882, 0, 0, 0, 0.395882, 0, 0, 0, 0.395882, -32.6024, -0.0250649, -1.14802)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg9" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -34.7528, -0.0250649, 0.615113)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg10" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -34.7528, -0.0250649, -2.78415)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg11" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.395882, 0, 0, 0, 0.395882, 0, 0, 0, 0.395882, -36.9032, -2.80915, -1.14802)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg12" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.395882, 0, 0, 0, 0.395882, 0, 0, 0, 0.395882, -32.6024, -2.80915, -1.14802)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg13" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -34.7528, -2.80915, 0.615113)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg14" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -34.7528, -2.80915, -2.78415)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg15" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.395882, 0, 0, 0, 0.395882, 0, 0, 0, 0.395882, -36.9032, -6.27978, -1.14802)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg16" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(0.395882, 0, 0, 0, 0.395882, 0, 0, 0, 0.395882, -32.6024, -6.27978, -1.14802)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg17" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -34.7528, -6.27978, 0.615113)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg18" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -34.7528, -6.27978, -2.78415)
+script = ExtResource("6_mnpsx")
+
+[node name="platform-large-tall-rotating2" parent="World" instance=ExtResource("33_7d8wh")]
+transform = Transform3D(-3.05585e-08, 0, 0.500324, 0, 1.00065, 0, -0.699098, 0, -2.18699e-08, -27.2629, 2.72377, -0.924439)
+
+[node name="platform_large_cross_bg42" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.2866, 0.606224, -3.08646)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg43" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.395882, 0, -3.46092e-08, 0, 0.395882, 0, 3.46092e-08, 0, -0.395882, -25.5235, 0.606224, -0.936062)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg44" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.395882, 0, -3.46092e-08, 0, 0.395882, 0, 3.46092e-08, 0, -0.395882, -28.9228, 0.606224, -0.936062)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg45" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.2866, -2.17786, 1.21434)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg56" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.287, 0.606, 1.214)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg46" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.2866, -2.17786, -3.08646)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg47" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.395882, 0, -3.46092e-08, 0, 0.395882, 0, 3.46092e-08, 0, -0.395882, -25.5235, -2.17786, -0.936062)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg48" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.395882, 0, -3.46092e-08, 0, 0.395882, 0, 3.46092e-08, 0, -0.395882, -28.9228, -2.17786, -0.936062)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg49" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.2866, -5.64849, 1.21434)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg50" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-1.73046e-08, 0, 0.395882, 0, 0.395882, 0, -0.395882, 0, -1.73046e-08, -27.2866, -5.64849, -3.08646)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg51" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.395882, 0, -3.46092e-08, 0, 0.395882, 0, 3.46092e-08, 0, -0.395882, -25.5235, -5.64849, -0.936062)
+script = ExtResource("6_mnpsx")
+
+[node name="platform_large_cross_bg52" parent="World" instance=ExtResource("29_qmxgw")]
+transform = Transform3D(-0.395882, 0, -3.46092e-08, 0, 0.395882, 0, 3.46092e-08, 0, -0.395882, -28.9228, -5.64849, -0.936062)
+script = ExtResource("6_mnpsx")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World"]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -38.5025, 10.524, -38.0275)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/StaticBody3D2"]
+transform = Transform3D(5.04321, 0, -2.98023e-08, 0, 11.818, -0.0198605, 0, 0.234759, 0.999803, -0.00545311, 0.532404, 6.38701)
+mesh = SubResource("BoxMesh_fwqlt")
+surface_material_override/0 = SubResource("StandardMaterial3D_lp6v7")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="World"]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -44.0108, 10.524, -33.7054)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/StaticBody3D3"]
+transform = Transform3D(5.04321, 0, -2.98023e-08, 0, 11.818, -0.0198605, 0, 0.234759, 0.999803, -0.00545311, 0.532404, 6.387)
+mesh = SubResource("BoxMesh_fwqlt")
+surface_material_override/0 = SubResource("StandardMaterial3D_lp6v7")
+
+[node name="platform_big_cross" parent="World" instance=ExtResource("35_ovxwl")]
+transform = Transform3D(0.786935, 0, 0.617036, 0, 1, 0, -0.617036, 0, 0.786935, -34.0744, 11.0688, -32.3802)
+script = ExtResource("6_mnpsx")
+rotation_speed = 0.005
+
+[node name="platform_big_cross2" parent="World" instance=ExtResource("35_ovxwl")]
+transform = Transform3D(0.786935, -0.43631, 0.43631, 0, 0.707107, 0.707107, -0.617036, -0.556447, 0.556447, -39.5827, 11.0688, -28.0581)
+script = ExtResource("6_mnpsx")
+rotation_speed = 0.005
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.786935, 0, -0.617036, 0, 1, 0, 0.617036, 0, -0.786935, -25.7254, 18.5017, -14.4703)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/StaticBody3D6"]
+transform = Transform3D(4.56079, 0, 0, 0, 10.6897, -0.000473564, 0, 0.00559671, 0.904343, -0.0183086, 1.14654, 6.34803)
+mesh = SubResource("BoxMesh_fwqlt")
+surface_material_override/0 = SubResource("StandardMaterial3D_lp6v7")
+
+[node name="platform_big_cross5" parent="World" instance=ExtResource("35_ovxwl")]
+transform = Transform3D(-0.71166, 0, -0.558013, 0, 0.904344, 0, 0.558013, 0, -0.71166, -30.3954, 19.6599, -20.4478)
+script = ExtResource("6_mnpsx")
+rotation_speed = 0.005
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.324011, 0, 0.413227, 0, 0.525109, 0, -0.413227, 0, -0.324011, -42.1857, 18.6007, -16.0812)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/StaticBody3D4"]
+transform = Transform3D(5.04321, 0, 0, 0, 11.818, -0.0198605, -2.38419e-07, 0.234759, 0.999803, -0.0408936, 0.532402, 6.51308)
+mesh = SubResource("BoxMesh_fwqlt")
+surface_material_override/0 = SubResource("StandardMaterial3D_lp6v7")
+
+[node name="platform_big_cross3" parent="World" instance=ExtResource("35_ovxwl")]
+transform = Transform3D(-0.324011, 0, 0.413227, 0, 0.525109, 0, -0.413227, 0, -0.324011, -39.1567, 18.8868, -18.4326)
+script = ExtResource("6_mnpsx")
+rotation_speed = 0.005
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="World"]
+transform = Transform3D(-0.324011, 0, 0.413227, 0, 0.525109, 0, -0.413227, 0, -0.324011, -44.5077, 21.1906, -19.1803)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/StaticBody3D5"]
+transform = Transform3D(5.04321, 0, -2.98023e-08, 0, 11.818, -0.0198605, 0, 0.234759, 0.999803, -0.00545311, 0.532404, 6.387)
+mesh = SubResource("BoxMesh_fwqlt")
+surface_material_override/0 = SubResource("StandardMaterial3D_lp6v7")
+
+[node name="platform_big_cross4" parent="World" instance=ExtResource("35_ovxwl")]
+transform = Transform3D(-0.324011, 0, 0.413227, 0, 0.525109, 0, -0.413227, 0, -0.324011, -41.5422, 21.4767, -21.5056)
+script = ExtResource("6_mnpsx")
+rotation_speed = 0.005
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="HUD" type="CanvasLayer" parent="." groups=["HUD"]]
+process_mode = 3
+script = ExtResource("22_1dx8f")
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 67.0
+offset_right = 313.0
+offset_bottom = 323.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("23_324j0")
+
+[node name="x" type="Label" parent="HUD/Control"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 123.0
+text = "×"
+label_settings = ExtResource("24_6hsja")
+
+[node name="Level Complete" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -429.0
+offset_top = 139.0
+offset_right = 429.0
+offset_bottom = 287.0
+grow_horizontal = 2
+text = "Level Complete!"
+label_settings = SubResource("LabelSettings_ri8jt")
+
+[node name="CoinsLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 123.0
+text = "0"
+label_settings = ExtResource("24_6hsja")
+
+[node name="PlayAgainButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -437.0
+offset_top = -260.0
+offset_right = -45.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("26_xw2uw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("25_vfu23")
+theme_override_font_sizes/font_size = 60
+text = "Play Again?"
+icon = ExtResource("27_ct75u")
+flat = true
+icon_alignment = 1
+
+[node name="NextLevelButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -260.0
+offset_right = 440.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("26_xw2uw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("25_vfu23")
+theme_override_font_sizes/font_size = 60
+text = "Next Level"
+icon = ExtResource("27_ct75u")
+flat = true
+icon_alignment = 1
+
+[node name="RestartGameButton" type="Button" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -260.0
+offset_right = 440.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("26_xw2uw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("25_vfu23")
+theme_override_font_sizes/font_size = 60
+text = "Restart Game"
+icon = ExtResource("27_ct75u")
+flat = true
+icon_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 59.0
+offset_right = 48.5
+offset_bottom = 115.0
+grow_horizontal = 2
+text = "00"
+label_settings = SubResource("LabelSettings_x4d2s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeNameLabel" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 22.0
+offset_right = 49.0
+offset_bottom = 78.0
+grow_horizontal = 2
+text = "TIME"
+label_settings = SubResource("LabelSettings_v6r7m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls" type="Label" parent="HUD/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 641.0
+offset_right = 336.0
+offset_bottom = 697.0
+grow_horizontal = 2
+text = "Run with Shift or top controller buttons"
+label_settings = SubResource("LabelSettings_v6r7m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_ycr00")
+volume_db = -20.0
+autoplay = true
+playback_type = 1
+
+[connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
+[connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
+[connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="HUD/Control/NextLevelButton" to="HUD" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="HUD/Control/RestartGameButton" to="HUD" method="_on_next_level_button_pressed"]

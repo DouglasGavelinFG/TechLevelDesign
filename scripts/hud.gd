@@ -2,6 +2,8 @@ extends CanvasLayer
 @onready var level_complete: Label = %"Level Complete"
 @onready var coins_label: Label = %CoinsLabel
 @onready var play_again_button: Button = %PlayAgainButton
+@onready var next_level_button: Button = %NextLevelButton
+@onready var restart_game_button: Button = %RestartGameButton
 @onready var environment: WorldEnvironment = %Environment
 @onready var time_label: Label = %TimeLabel
 @onready var time_name_label: Label = %TimeNameLabel
@@ -17,6 +19,8 @@ var pause_timer : bool
 func _ready() -> void:
 	level_complete.visible = false
 	play_again_button.visible = false
+	next_level_button.visible = false
+	restart_game_button.visible = false
 	time_label.visible = false
 	time_name_label.visible = false
 
@@ -58,10 +62,23 @@ func _on_player_reached_goal() -> void:
 	environment.camera_attributes.set("dof_blur_amount", 0.1)
 	level_complete.visible = true
 	play_again_button.visible = true
+	
+	if get_tree().current_scene.name == "Level 1":
+		next_level_button.visible = true
+	else:
+		restart_game_button.visible = true
+	
 	if speed_run:
 		pause_timer = true
 	get_tree().paused = true
 
+func _on_next_level_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/level2.tscn")
+
+func _on_restart_game_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/level1.tscn")
 
 func _on_play_again_button_pressed() -> void:
 	environment.camera_attributes.set("dof_blur_far_enabled", original_blur)
@@ -70,6 +87,12 @@ func _on_play_again_button_pressed() -> void:
 
 	get_tree().paused = false
 	play_again_button.visible = false
+	next_level_button.visible = false
+	restart_game_button.visible = false
 	level_complete.visible = false
 	coins_label.text = str(0)
 	get_tree().reload_current_scene()
+
+
+func _on_start_over_button_pressed() -> void:
+	pass # Replace with function body.
