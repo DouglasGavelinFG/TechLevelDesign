@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 
 @export var rotation_vector = 0
